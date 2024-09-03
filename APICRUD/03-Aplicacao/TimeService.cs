@@ -12,9 +12,9 @@ namespace CRUD.Aplicacao
     {
         public TimeRepository repository { get; set; }
 
-        public TimeService()
+        public TimeService(IConfiguration configuration ) //Interface que ajuda a pegar valores (parametros) da configuração do appsettings
         {
-            repository = new TimeRepository();
+            repository = new TimeRepository(configuration);
         }
 
         public void Adicionar(Time time)
