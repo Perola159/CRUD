@@ -10,9 +10,10 @@ namespace APICRUD.Controllers
     [Route("[controller]")]
     public class TimeController:ControllerBase
     {
-        private TimeService _service;
-        public TimeController() {
-            _service = new TimeService();
+        private readonly TimeService _service;
+        public TimeController(IConfiguration configuration) 
+        {
+            _service = new TimeService (configuration);
         }
 
         [HttpPost("adicionar-time")]

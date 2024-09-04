@@ -14,7 +14,9 @@ namespace CRUD.Repositorios
 
         public TimeRepository(IConfiguration configuration)
         {
-            ConnectionString = configuration.GetConnectionString("DefaultConection"); //default mesmo nome que chama a connetion da appsettings 
+            ConnectionString = configuration.GetConnectionString("DefaultConection"); 
+            
+            //default mesmo nome que chama a connetion da appsettings 
         }
         public void Adicionar(Time time)
         {
